@@ -2,8 +2,6 @@
 
 plant miRNA encoded peptides prediction based on protein language model
 
-
-
 ## Introduction
 
 Movitation:
@@ -26,6 +24,33 @@ We propose a prediction model, named pLM4PEP, to predict plant miPEPs. In this f
 | esm2                    | code for extracting the embedding layer                                                       |
 | pydpi                   | protein calculation package                                                                   |
 | feature                 | protein characterization calculation library                                                  |
+
+## Installation
+
+- Requirement
+  
+  OS：
+  
+  - `Windows` ：Windows10 or later
+  
+  - `Linux`：Ubuntu 16.04 LTS or later
+
+Python：
+
+- `Python` >= 3.8
+  
+  - Download `pLM4PEP`to your computer
+  
+  ```bash
+  git clone https://github.com/xialab-ahu/pLM4PEP.git
+  ```
+
+- open the dir in `conda prompt` and ceate a new environment named `myenv` with `environment.yaml`
+  
+  ```
+  cd pLM4PEP
+  conda env create -f environment.yaml -n myenv
+  ```
 
 ## Contact
 
