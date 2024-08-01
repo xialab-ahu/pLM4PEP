@@ -23,7 +23,7 @@ We propose a prediction model, named pLM4PEP, to predict plant miPEPs. In this f
 | datasets                | data                                                                                          |
 | esm2                    | code for extracting the embedding layer                                                       |
 | pydpi                   | protein calculation package                                                                   |
-| feature                 | protein characterization calculation library                                                  |
+| feature.py                 | protein characterization calculation library                                                  |
 
 ## Installation
 
@@ -45,12 +45,29 @@ Python：
   git clone https://github.com/xialab-ahu/pLM4PEP.git
   ```
 
-- open the dir in `conda prompt` and ceate a new environment named `myenv` with `environment.yaml`
+- open the dir in `conda prompt` and ceate a new environment named `myenv` with `requirements.txt`
   
   ```
   cd pLM4PEP
-  conda env create -f environment.yaml -n myenv
+  conda env create -f requirements.txt -n myenv
   ```
+
+
+## Training and test pLM4PEP model
+```shell
+cd "./pLM4PEP"
+python main.py
+```
+
+## Run pLM4PEP on a new test fasta file
+```shell
+python predictor.py --file test.fasta --out_path result
+```
+
+- `--file` : input the test file with fasta format
+
+- `--out_path`: the output path of the predicted results
+
 
 ## Contact
 
