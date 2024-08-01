@@ -50,6 +50,7 @@ Python：
   ```
   cd pLM4PEP
   conda env create -f requirements.txt -n myenv
+  conda activate myenv
   ```
 
 
