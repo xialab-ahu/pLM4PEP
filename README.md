@@ -55,6 +55,11 @@ Python：
 
 
 ## Training and test pLM4PEP model
+- 利用ESM2提取特征
+```shell
+
+```
+- 运行`main.py`文件，训练并评估pLM4PEP模型
 ```shell
 cd "./pLM4PEP"
 python main.py
