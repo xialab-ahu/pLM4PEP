@@ -12,7 +12,7 @@ Results:
 
 We propose a prediction model, named pLM4PEP, to predict plant miPEPs. In this field, compared with state-of-the-artl predictor,  pLM4PEP enables more accurate prediction and stronger generalization ability. pLM4PEP utilizes ESM2 to extract peptide feature embeddings, with LR serving as the classifier. The validation experiments conducted on various biopeptide datasets show that pLM4PEP has superior prediction performance.
 
-<img src="file:///C:/Users/yys/AppData/Roaming/marktext/images/2024-05-15-11-18-45-image.png" title="" alt="" width="637">
+![draft](./figure/framework.png)
 
 ## Related Files
 
