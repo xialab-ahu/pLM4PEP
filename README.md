@@ -60,7 +60,7 @@ Python：
 ## Training and test pLM4PEP model
 - Extracting features using [ESM2](https://github.com/facebookresearch/esm)
   
-    Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm). In our "./pLM4PEP/esm-reduced", we have modified the extract.py file and changed the way the model output results are saved from each peptide sequence as a file to the entire dataset as a file. The user should download the esm model which named [esm2_t12_35M_UR50D.pt](https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t12_35M_UR50D.pt) in esm-reduced folder before extracting the embedding layer.
+    Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm). In our "./pLM4PEP/esm-reduced", we have modified the `extract.py` file and changed the way the model output results are saved from each peptide sequence as a file to the entire dataset as a file. The user should download the esm model which named [esm2_t12_35M_UR50D.pt](https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t12_35M_UR50D.pt) in esm-reduced folder before extracting the embedding layer.
 ```shell
 cd "./pLM4PEP/esm-reduced"
 python extract.py esm2_t12_35M_UR50D.pt pLM4PEP/datasets/FRL_data/train_dataset_500.txt esm2/train_dataset_500 --include mean
