@@ -58,13 +58,20 @@ Python：
 
 
 ## Training and test pLM4PEP model
-- 利用ESM2提取特征
-```shell
+- Clone [ESM2](https://github.com/facebookresearch/esm) to the local "./pLM4PEP/esm reduced" directory
 
-```
-- 运行`main.py`文件，训练并评估pLM4PEP模型
+   Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm)
+- Extracting features using [ESM2](https://github.com/facebookresearch/esm)
 ```shell
-cd "./pLM4PEP"
+cd "./pLM4PEP/esm-reduced"
+python extract.py esm2_t12_35M_UR50D.pt esm2/train_dataset_500.txt esm2/train_dataset_500 --include mean
+python extract.py esm2_t12_35M_UR50D.pt esm2/independent_test_dataset1_607.txt esm2/independent_test_dataset1_607 --include mean
+python extract.py esm2_t12_35M_UR50D.pt esm2/independent_test_dataset2_612.txt esm2/independent_test_dataset2_612 --include mean
+python extract.py esm2_t12_35M_UR50D.pt esm2/independent_test_dataset3_1018.txt esm2/independent_test_dataset3_1018 --include mean
+```
+- Run the 'main. py' file to train and evaluate the pLM4PEP model
+```shell
+cd ..
 python main.py
 ```
 
