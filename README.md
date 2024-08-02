@@ -20,7 +20,7 @@ We propose a prediction model, named pLM4PEP, to predict plant miPEPs. In this f
 |:----------------------- |:--------------------------------------------------------------------------------------------- |
 | main.py                 | the main file of pLM4PEP predictor (include data reading, encoding, and classifier selection) |
 | predictor.py            | Load pre trained model for prediction                                                         |
-| requirements.py         | Python dependency packages that need to be installed                                          |
+| requirements.txt        | Python dependency packages that need to be installed                                          |
 | ML_grid_search_model.py | Grid search method for optimizing the structure of neural network                             |
 | datasets                | data                                                                                          |
 | esm2                    | code for extracting the embedding layer                                                       |
