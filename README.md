@@ -69,7 +69,7 @@ python extract.py esm2_t12_35M_UR50D.pt esm2/independent_test_dataset1_607.txt e
 python extract.py esm2_t12_35M_UR50D.pt esm2/independent_test_dataset2_612.txt esm2/independent_test_dataset2_612 --include mean
 python extract.py esm2_t12_35M_UR50D.pt esm2/independent_test_dataset3_1018.txt esm2/independent_test_dataset3_1018 --include mean
 ```
-- Run the 'main. py' file to train and evaluate the pLM4PEP model
+- Run the `main. py` file to train and evaluate the pLM4PEP model
 ```shell
 cd ..
 python main.py
