@@ -69,7 +69,7 @@ def CombineFeature(pep, data, featurelist):  #把featurelist里包含的feature�
     # print(a)
     if 'bertfea' in featurelist:
         # 定义要执行的命令
-        script = "extract.py"  # 修改为用户下载的extract.py脚本路径
+        script = "./esm-reduced/extract.py"  # 修改为用户下载的extract.py脚本路径
         model_path = "esm2_t12_35M_UR50D.pt"
         input_data = data
         output_dir = "esm2/test_fasta"
