@@ -19,13 +19,14 @@ We propose a prediction model, named pLM4PEP, to predict plant miPEPs. In this f
 | FILE NAME               | DESCRIPTION                                                                                   |
 |:----------------------- |:--------------------------------------------------------------------------------------------- |
 | main.py                 | the main file of pLM4PEP predictor (include data reading, encoding, and classifier selection) |
-| predictor.py            | 加载预训练的模型进行预测                                                                         |
-| requirements.py         | 需要安装的python依赖包                                                                         |
+| predictor.py            | Load pre trained model for prediction                                                         |
+| requirements.py         | Python dependency packages that need to be installed                                          |
 | ML_grid_search_model.py | Grid search method for optimizing the structure of neural network                             |
 | datasets                | data                                                                                          |
 | esm2                    | code for extracting the embedding layer                                                       |
 | pydpi                   | protein calculation package                                                                   |
 | feature.py              | protein characterization calculation library                                                  |
+| model.joblib            | Saved trained pLM4PEP model                                                                   |
 
 ## Installation
 
