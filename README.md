@@ -58,10 +58,10 @@ Python：
 
 
 ## Training and test pLM4PEP model
-- Clone [ESM2](https://github.com/facebookresearch/esm) to the local "./pLM4PEP/esm reduced" directory
-
-   Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm)
 - Extracting features using [ESM2](https://github.com/facebookresearch/esm)
+  
+    Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm).
+    In our "./pLM4PEP/esm-reduced", we have modified the extract.Py file and changed the way the model output results are saved from each peptide sequence as a file to the entire dataset as a file.
 ```shell
 cd "./pLM4PEP/esm-reduced"
 python extract.py esm2_t12_35M_UR50D.pt pLM4PEP/datasets/FRL_data/train_dataset_500.txt esm2/train_dataset_500 --include mean
