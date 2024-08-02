@@ -88,7 +88,7 @@ We will package the results of the model's peptide function recognition in a txt
 name
 result
 ```
-The result has two values, namely positive and negative. `positive` indicates that the sequence you provided is miPEP, otherwise it is not. For example, if you provide a fasta file of a peptide sequence
+The result has two values, namely `positive` and `negative`. `positive` indicates that the sequence you provided is miPEP, otherwise it is not. For example, if you provide a fasta file of a peptide sequence
 ```
 >pri-miRNA159a_f1_s2_train
 MEVELLKVQT
