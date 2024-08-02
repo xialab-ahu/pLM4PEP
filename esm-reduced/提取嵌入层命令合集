@@ -1,0 +1,6 @@
+python extract.py esm2_t12_35M_UR50D.pt examples/data/train_dataset_500.txt examples/data/some_proteins_emb_esm2/train_dataset_500 --include mean
+python extract.py esm2_t12_35M_UR50D.pt examples/data/independent_test_dataset1_607.txt examples/data/some_proteins_emb_esm2/independent_test_dataset1_607 --include mean per_tok
+python extract.py esm2_t12_35M_UR50D.pt examples/data/independent_test_dataset2_612.txt examples/data/some_proteins_emb_esm2/independent_test_dataset2_612 --include mean per_tok
+python extract.py esm2_t12_35M_UR50D.pt examples/data/independent_test_dataset3_1018.txt examples/data/some_proteins_emb_esm2/independent_test_dataset3_1018 --include mean per_tok
+#修改了extract.py文件，将模型输出结果的保存方式从每条肽序列保存为一个文件修改为整个数据集保存一个文件。
+#对于新数据集，在提取嵌入层时，只需要将对应的数据集路径（如：train_dataset_500.txt）和输出文件名称（如：train_dataset_500，会自动添加扩展名.pt）进行替换，然后在shell里运行命令即可
