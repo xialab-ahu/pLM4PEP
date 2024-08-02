@@ -11,6 +11,7 @@ import torch
 from pathlib import Path
 import argparse
 import joblib
+import subprocess
 
 
 def ArgsGet():
@@ -61,14 +62,32 @@ def ReadPeptides(file_path):  # 读取肽序列文件
     return pos, names
 
 
-def CombineFeature(pep, featurelist):  #把featurelist里包含的feature堆叠起来
+def CombineFeature(pep, data, featurelist):  #把featurelist里包含的feature堆叠起来
     a = np.empty([len(pep), 1]) #初始化特征矩阵，行数为训练集样本数，列数为1
     fname = []  #创建空列表保存特征名称
     vocab_name = []
     # print(a)
     if 'bertfea' in featurelist:
-        # 加载预训练好的esm2模型
-        f_bertfea = torch.load('./esm2/train_dataset_500.pt')  # 这里改为调用ESM2模型提取特征的代码
+        # 定义要执行的命令
+        script = "extract.py"  # 修改为用户下载的extract.py脚本路径
+        model_path = "esm2_t12_35M_UR50D.pt"
+        input_data = data
+        output_dir = "esm2/test_fasta"
+        additional_option = "--include mean"
+        # 构建命令行参数
+        command = [script, model_path, input_data, output_dir, additional_option]
+        # 执行命令
+        result = subprocess.run(command, capture_output=True, text=True)
+        # 检查执行结果
+        if result.returncode == 0:
+            print("脚本执行成功，输出如下：")
+            print(result.stdout)
+        else:
+            print("脚本执行失败，错误信息如下：")
+            print(result.stderr)
+
+        # 加载预训练好的esm2特征
+        f_bertfea = torch.load('./esm2/test_fasta.pt')
 
         b = MinMaxScaler().fit_transform(f_bertfea)
         a = np.column_stack((a, b))
@@ -91,7 +110,7 @@ if __name__ == '__main__':
     all_feature = ['bertfea']
 
     # extract features
-    features, _, _ = CombineFeature(pep, all_feature)
+    features, _, _ = CombineFeature(pep, file, all_feature)
 
     # prediction
     pre_my(features, names, output_path)
