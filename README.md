@@ -60,8 +60,7 @@ Python：
 ## Training and test pLM4PEP model
 - Extracting features using [ESM2](https://github.com/facebookresearch/esm)
   
-    Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm).
-    In our "./pLM4PEP/esm-reduced", we have modified the extract.Py file and changed the way the model output results are saved from each peptide sequence as a file to the entire dataset as a file.
+    Note: There are detailed tutorials available on this website(https://github.com/facebookresearch/esm). In our "./pLM4PEP/esm-reduced", we have modified the extract.py file and changed the way the model output results are saved from each peptide sequence as a file to the entire dataset as a file. The user should download the esm model which named esm2_t12_35M_UR50D.pt in esm-reduced folder before extracting the embedding layer.
 ```shell
 cd "./pLM4PEP/esm-reduced"
 python extract.py esm2_t12_35M_UR50D.pt pLM4PEP/datasets/FRL_data/train_dataset_500.txt esm2/train_dataset_500 --include mean
@@ -83,8 +82,22 @@ python predictor.py --file test.fasta --out_path result
 - `--file` : input the test file with fasta format
 
 - `--out_path`: the output path of the predicted results
-
-
+### Result
+We will package the results of the model's peptide function recognition in a txt file. The format of this file is:
+```
+name
+result
+```
+The result has two values, namely positive and negative. `positive` indicates that the sequence you provided is miPEP, otherwise it is not. For example, if you provide a fasta file of a peptide sequence
+```
+>pri-miRNA159a_f1_s2_train
+MEVELLKVQT
+```
+The result is:
+```
+>pri-miRNA159a_f1_s2_train
+positive
+```
 ## Contact
 
 Please feel free to contact us if you need any help.
